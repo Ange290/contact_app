@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 app.use(errorhandling.notFound);
-app.use(errorhandling.server);
+//app.use(errorhandling.server);
 app.use(errorhandling.otherError);
 mongoose.connect(configuration.mongoURI)
 .then(() => {
