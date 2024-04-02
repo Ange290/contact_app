@@ -1,9 +1,9 @@
 // Contact controllers here
 
-import contactModel from "../models/contact.model";
+import contactModel from "../models/contact.model.js";
 
 
-const bookController ={
+const contactController ={
     createContact: async(req,res)=>{
         try {
             const newContact = await contactModel.create(req.body);
@@ -21,4 +21,4 @@ const bookController ={
         }
     }
 }
-export default bookController;
+export default contactController;
