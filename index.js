@@ -12,7 +12,7 @@ app.use(cors());
 mongoose.connect(configuration.mongoURI)
 .then(() => {
     app.listen(configuration.port, ()=> {
-        console.log("listening on port "+configuration.port);
+        console.log("Server is listening on port "+configuration.port);
     });
 })
 .catch(err => {
