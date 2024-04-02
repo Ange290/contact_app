@@ -6,12 +6,14 @@ import configuration from './configs/index.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import router from './routes/contact.routes.js';
-import error from './errorhandling/notfound.js';
+import errorhandling from './errorhandling/handleAllErrors.js';
 
 app.use(express.json());
 app.use(cors());
 app.use(router);
-app.use(error);
+app.use(errorhandling.notFound);
+app.use(errorhandling.server);
+app.use(errorhandling.otherError);
 mongoose.connect(configuration.mongoURI)
 .then(() => {
     app.listen(configuration.port, ()=> {
