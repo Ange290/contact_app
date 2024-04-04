@@ -19,6 +19,22 @@ const contactController ={
         } catch (error) {
           res.status(500).json({message:'Error in get contact', Error: error.message})  
         }
-    }
+    },
+    updateContact : async (req, res) => {
+        try {
+          const contact = await Contact.findByIdAndUpdate(req.params.id, req.body, { new: true });
+          res.send(contact);
+        } catch (error) {
+          res.status(400).send(error.message);
+        }
+      },
+      deleteContact : async (req, res) => {
+        try {
+          await Contact.findByIdAndDelete(req.params.id);
+          res.send('Contact deleted successfully');
+        } catch (error) {
+          res.status(400).send(error.message);
+        }
+      }
 }
 module.exports=contactController;
