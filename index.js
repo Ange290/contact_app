@@ -14,6 +14,7 @@ app.use(router);
 app.use(errorhandling.notFound);
 //app.use(errorhandling.server);
 app.use(errorhandling.otherError);
+
 mongoose.connect(configuration.mongoURI)
 .then(() => {
     app.listen(configuration.port, ()=> {
