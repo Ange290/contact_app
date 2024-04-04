@@ -3,4 +3,4 @@ const configs = {
     mongoURI: 'mongodb+srv://uange209:Ange123@cluster0.qxfcneq.mongodb.net/et/Contact_App',
 }
 
-export default configs;
+module.exports= configs;

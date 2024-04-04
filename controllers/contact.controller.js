@@ -1,6 +1,6 @@
 // Contact controllers here
 
-import contactModel from "../models/contact.model.js";
+const contactModel = require("../models/contact.model.js");
 
 
 const contactController ={
@@ -21,4 +21,4 @@ const contactController ={
         }
     }
 }
-export default contactController;
+module.exports=contactController;
