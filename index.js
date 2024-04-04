@@ -13,7 +13,7 @@ const errorhandling =require('./errorhandling/handleAllErrors.js');
 
 app.use(express.json());
 app.use(router);
-app.use(errorhandling.notFound);
+//app.use(errorhandling.notFound);
 //app.use(errorhandling.server);
 app.use(errorhandling.otherError);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swagger))

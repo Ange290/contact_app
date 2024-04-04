@@ -9,7 +9,7 @@
     "basePath": "",
     "schemes": ["http", "https"],
     "paths": {
-      "/contacts/createContact": {
+      "/api/create": {
         "post": {
           "summary": "Create a new contact",
           "description": "Create a new contact",
@@ -32,7 +32,7 @@
           }
         }
       },
-      "/contacts/{id}": {
+      "/api/update/{id}": {
         "put": {
           "summary": "Update a contact by ID",
           "description": "Update a contact by ID",
@@ -63,7 +63,8 @@
               "description": "Contact not found"
             }
           }
-        },
+        }},
+        "/api/delete/{id}":{
         "delete": {
           "summary": "Delete a contact by ID",
           "description": "Delete a contact by ID",
@@ -85,7 +86,8 @@
               "description": "Contact not found"
             }
           }
-        },
+        }},
+        "/api/get/{id}":{
         "get": {
           "summary": "Get a contact by ID",
           "description": "Get a contact by ID",
@@ -108,29 +110,38 @@
             }
           }
         }
-      }
-    },
+      
+    }},
     "definitions": {
       "Contact": {
         "type": "object",
         "properties": {
-          "name": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
             "type": "string"
           },
           "email": {
             "type": "string"
           },
+          "phone": {
+            "type": "string"
+          },
+          "workPhone": {
+            "type": "string"
+          },
           "address": {
             "type": "string"
           },
-          "pronoun": {
+           "company": {
             "type": "string"
           },
-          "company": {
+          "profilePicture": {
             "type": "string"
           }
         },
-        "required": ["name", "email", "address", "pronoun", "company"]
+        "required": ["firstName","lastName", "email","phone","workPhone"]
       }
     }
   }
