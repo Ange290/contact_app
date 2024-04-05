@@ -33,7 +33,7 @@
         }
       },
       "/api/update/{id}": {
-        "put": {
+        "patch": {
           "summary": "Update a contact by ID",
           "description": "Update a contact by ID",
           "tags": ["Contacts"],
@@ -87,7 +87,7 @@
             }
           }
         }},
-        "/api/get/{id}":{
+        "/api/id/{id}":{
         "get": {
           "summary": "Get a contact by ID",
           "description": "Get a contact by ID",
@@ -109,7 +109,21 @@
               "description": "Contact not found"
             }
           }
-        }
+        }},
+        "/api/get":{
+            "get": {
+              "summary": "Get all contacts ",
+              "description": "Get all contacts",
+              "tags": ["Contacts"],
+              "responses": {
+                "200": {
+                  "description": "Successful response"
+                },
+                "404": {
+                  "description": "Contact not found"
+                }
+              }
+            }
       
     }},
     "definitions": {
